@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/6/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed May 17 15:00:30 IST 2023</td>
+<td>Started on:</td><td>Tue May 23 07:05:24 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>210 seconds (210975 ms)</td>
+<tr><td>Total time:</td><td>7 seconds (7082 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,65 +76,88 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testRunner.runnerTest.runScenario()'><b>runScenario</b><br>Test class: testRunner.runnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Register to MMT to list your own hotel", "Register to MMT"</td>
-<td><div><pre>java.lang.AssertionError: null
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.fail(Assert.java:115)
-	at stepDefinitions.ListUserHotel.verifyRegistration(ListUserHotel.java:84)
-	at ✽.A link to the registered email id is sent(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Register.feature:9)
-</pre></div><a href='#' onClick='toggleBox("stack-trace454958850", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace454958850'><pre>java.lang.AssertionError: null
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.fail(Assert.java:115)
-	at stepDefinitions.ListUserHotel.verifyRegistration(ListUserHotel.java:84)
-	at ✽.A link to the registered email id is sent(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Register.feature:9)
-</pre></div></td>
-<td>33</td>
-<td>testRunner.runnerTest@5bda8e08</td></tr>
-<tr>
-<td title='testRunner.runnerTest.runScenario()'><b>runScenario</b><br>Test class: testRunner.runnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the final amount paid", "Validate Filter and Final Amount"</td>
-<td><div><pre>java.lang.AssertionError: null
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.fail(Assert.java:115)
-	at stepDefinitions.HotelPayment.reviewPrice(HotelPayment.java:67)
-	at ✽.The same amount should show in the booking review page and payments page(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Payment.feature:11)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1493087920", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1493087920'><pre>java.lang.AssertionError: null
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.fail(Assert.java:115)
-	at stepDefinitions.HotelPayment.reviewPrice(HotelPayment.java:67)
-	at ✽.The same amount should show in the booking review page and payments page(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Payment.feature:11)
-</pre></div></td>
-<td>50</td>
-<td>testRunner.runnerTest@5bda8e08</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
 <td title='testRunner.runnerTest.runScenario()'><b>runScenario</b><br>Test class: testRunner.runnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login to MMT with valid credentials", "Login to MMT"</td>
-<td></td>
-<td>27</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;screenshot&quot; is null
+	at stepDefinitions.Commons.getSS(Commons.java:42)
+	at stepDefinitions.MMTSignIn.verifyAccount(MMTSignIn.java:60)
+	at ✽.User is logged into his account(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/SignIn.feature:8)
+</pre></div><a href='#' onClick='toggleBox("stack-trace131037934", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace131037934'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;screenshot&quot; is null
+	at stepDefinitions.Commons.getSS(Commons.java:42)
+	at stepDefinitions.MMTSignIn.verifyAccount(MMTSignIn.java:60)
+	at ✽.User is logged into his account(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/SignIn.feature:8)
+</pre></div></td>
+<td>0</td>
 <td>testRunner.runnerTest@5bda8e08</td></tr>
 <tr>
 <td title='testRunner.runnerTest.runScenario()'><b>runScenario</b><br>Test class: testRunner.runnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login to MMT with valid credentials", "Login to MMT"</td>
-<td></td>
-<td>24</td>
-<td>testRunner.runnerTest@5bda8e08</td></tr>
-<tr>
-<td title='testRunner.runnerTest.runScenario()'><b>runScenario</b><br>Test class: testRunner.runnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the filter applied", "Validate Filter and Final Amount"</td>
-<td></td>
-<td>38</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;screenshot&quot; is null
+	at stepDefinitions.Commons.getSS(Commons.java:42)
+	at stepDefinitions.MMTSignIn.verifyAccount(MMTSignIn.java:60)
+	at ✽.User is logged into his account(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/SignIn.feature:8)
+</pre></div><a href='#' onClick='toggleBox("stack-trace404036116", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace404036116'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;screenshot&quot; is null
+	at stepDefinitions.Commons.getSS(Commons.java:42)
+	at stepDefinitions.MMTSignIn.verifyAccount(MMTSignIn.java:60)
+	at ✽.User is logged into his account(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/SignIn.feature:8)
+</pre></div></td>
+<td>0</td>
 <td>testRunner.runnerTest@5bda8e08</td></tr>
 <tr>
 <td title='testRunner.runnerTest.runScenario()'><b>runScenario</b><br>Test class: testRunner.runnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Open and check MMT twitter and facebook", "Verify MMT Social Media Sites"</td>
-<td></td>
-<td>34</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;screenshot&quot; is null
+	at stepDefinitions.Commons.getSS(Commons.java:42)
+	at stepDefinitions.SocialSites.verifySocialMediaSites(SocialSites.java:104)
+	at ✽.All the social media sites should open correctly(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/SocialSites.feature:8)
+</pre></div><a href='#' onClick='toggleBox("stack-trace468776694", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace468776694'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;screenshot&quot; is null
+	at stepDefinitions.Commons.getSS(Commons.java:42)
+	at stepDefinitions.SocialSites.verifySocialMediaSites(SocialSites.java:104)
+	at ✽.All the social media sites should open correctly(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/SocialSites.feature:8)
+</pre></div></td>
+<td>5</td>
+<td>testRunner.runnerTest@5bda8e08</td></tr>
+<tr>
+<td title='testRunner.runnerTest.runScenario()'><b>runScenario</b><br>Test class: testRunner.runnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the filter applied on Hotel", "Validate Filter and Final Amount"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;screenshot&quot; is null
+	at stepDefinitions.Commons.getSS(Commons.java:42)
+	at stepDefinitions.Commons.hotelSearch(Commons.java:94)
+	at ✽.Search for hotel &quot;Goa&quot;(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Payment.feature:5)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1266093632", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1266093632'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;screenshot&quot; is null
+	at stepDefinitions.Commons.getSS(Commons.java:42)
+	at stepDefinitions.Commons.hotelSearch(Commons.java:94)
+	at ✽.Search for hotel &quot;Goa&quot;(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Payment.feature:5)
+</pre></div></td>
+<td>0</td>
+<td>testRunner.runnerTest@5bda8e08</td></tr>
+<tr>
+<td title='testRunner.runnerTest.runScenario()'><b>runScenario</b><br>Test class: testRunner.runnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Register to MMT to list your own hotel", "Register to MMT"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;screenshot&quot; is null
+	at stepDefinitions.Commons.getSS(Commons.java:42)
+	at stepDefinitions.ListUserHotel.verifyRegistration(ListUserHotel.java:78)
+	at ✽.A link to the registered email id is sent(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Register.feature:9)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1222094219", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1222094219'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;screenshot&quot; is null
+	at stepDefinitions.Commons.getSS(Commons.java:42)
+	at stepDefinitions.ListUserHotel.verifyRegistration(ListUserHotel.java:78)
+	at ✽.A link to the registered email id is sent(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Register.feature:9)
+</pre></div></td>
+<td>0</td>
+<td>testRunner.runnerTest@5bda8e08</td></tr>
+<tr>
+<td title='testRunner.runnerTest.runScenario()'><b>runScenario</b><br>Test class: testRunner.runnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the final amount paid for Hotel", "Validate Filter and Final Amount"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;screenshot&quot; is null
+	at stepDefinitions.Commons.getSS(Commons.java:42)
+	at stepDefinitions.Commons.hotelSearch(Commons.java:94)
+	at ✽.Search for hotel &quot;Goa&quot;(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Payment.feature:5)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2111247080", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2111247080'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;screenshot&quot; is null
+	at stepDefinitions.Commons.getSS(Commons.java:42)
+	at stepDefinitions.Commons.hotelSearch(Commons.java:94)
+	at ✽.Search for hotel &quot;Goa&quot;(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Payment.feature:5)
+</pre></div></td>
+<td>0</td>
 <td>testRunner.runnerTest@5bda8e08</td></tr>
 </table><p>
 </body>

@@ -21,7 +21,7 @@ public class Commons{
 
 	public static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	public static HomePage searchForHotelList;
-	public static PopUps dismissPopups;
+	public PopUps dismissPopups;
 	public ExtentTest test;
 	int errorExcpetion=0,screenShot;
 	static int screenShotCount=1;

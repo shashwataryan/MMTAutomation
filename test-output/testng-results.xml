@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="4" failed="2" skipped="0">
+<testng-results ignored="0" total="6" passed="0" failed="6" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-17T15:00:30 IST" name="Default suite" finished-at="2023-05-17T15:04:01 IST" duration-ms="210975">
+  <suite started-at="2023-05-23T07:05:24 IST" name="Default suite" finished-at="2023-05-23T07:05:31 IST" duration-ms="7082">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runnerTest@5bda8e08]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-05-17T15:00:30 IST" name="Default test" finished-at="2023-05-17T15:04:01 IST" duration-ms="210975">
+    <test started-at="2023-05-23T07:05:24 IST" name="Default test" finished-at="2023-05-23T07:05:31 IST" duration-ms="7082">
       <class name="testRunner.runnerTest">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-17T15:00:30 IST" name="setUpClass" finished-at="2023-05-17T15:00:31 IST" duration-ms="1108" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-23T07:05:24 IST" name="setUpClass" finished-at="2023-05-23T07:05:25 IST" duration-ms="1074" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5e62ca19]]>
+                <![CDATA[org.testng.TestRunner@7b3315a5]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-17T15:00:31 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-17T15:01:22 IST" duration-ms="50935" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-23T07:05:25 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-23T07:05:26 IST" duration-ms="122" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate the final amount paid"]]>
+                <![CDATA["Validate the final amount paid for Hotel"]]>
               </value>
             </param>
             <param index="1">
@@ -34,27 +34,26 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[null]]>
+              <![CDATA[Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: null
-at org.testng.Assert.fail(Assert.java:110)
-at org.testng.Assert.fail(Assert.java:115)
-at stepDefinitions.HotelPayment.reviewPrice(HotelPayment.java:67)
-at ✽.The same amount should show in the booking review page and payments page(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Payment.feature:11)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+at stepDefinitions.Commons.getSS(Commons.java:42)
+at stepDefinitions.Commons.hotelSearch(Commons.java:94)
+at ✽.Search for hotel "Goa"(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Payment.feature:5)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-17T15:01:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-17T15:02:01 IST" duration-ms="38558" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-23T07:05:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-23T07:05:26 IST" duration-ms="10" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate the filter applied"]]>
+                <![CDATA["Validate the filter applied on Hotel"]]>
               </value>
             </param>
             <param index="1">
@@ -63,10 +62,22 @@ at ✽.The same amount should show in the booking review page and payments page(
               </value>
             </param>
           </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+at stepDefinitions.Commons.getSS(Commons.java:42)
+at stepDefinitions.Commons.hotelSearch(Commons.java:94)
+at ✽.Search for hotel "Goa"(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Payment.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-17T15:02:01 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-17T15:02:34 IST" duration-ms="33236" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-23T07:05:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-23T07:05:26 IST" duration-ms="74" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -79,23 +90,22 @@ at ✽.The same amount should show in the booking review page and payments page(
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[null]]>
+              <![CDATA[Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: null
-at org.testng.Assert.fail(Assert.java:110)
-at org.testng.Assert.fail(Assert.java:115)
-at stepDefinitions.ListUserHotel.verifyRegistration(ListUserHotel.java:84)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+at stepDefinitions.Commons.getSS(Commons.java:42)
+at stepDefinitions.ListUserHotel.verifyRegistration(ListUserHotel.java:78)
 at ✽.A link to the registered email id is sent(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/Register.feature:9)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-17T15:02:34 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-17T15:03:01 IST" duration-ms="27023" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-23T07:05:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-23T07:05:26 IST" duration-ms="18" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -108,10 +118,22 @@ at ✽.A link to the registered email id is sent(file:///C:/Users/Shashwat%20Ary
               </value>
             </param>
           </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+at stepDefinitions.Commons.getSS(Commons.java:42)
+at stepDefinitions.MMTSignIn.verifyAccount(MMTSignIn.java:60)
+at ✽.User is logged into his account(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/SignIn.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-17T15:03:01 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-17T15:03:26 IST" duration-ms="24665" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-23T07:05:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-23T07:05:26 IST" duration-ms="13" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -124,10 +146,22 @@ at ✽.A link to the registered email id is sent(file:///C:/Users/Shashwat%20Ary
               </value>
             </param>
           </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+at stepDefinitions.Commons.getSS(Commons.java:42)
+at stepDefinitions.MMTSignIn.verifyAccount(MMTSignIn.java:60)
+at ✽.User is logged into his account(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/SignIn.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-17T15:03:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-17T15:04:00 IST" duration-ms="34798" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-23T07:05:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-23T07:05:31 IST" duration-ms="5023" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -140,10 +174,22 @@ at ✽.A link to the registered email id is sent(file:///C:/Users/Shashwat%20Ary
               </value>
             </param>
           </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "screenshot" is null
+at stepDefinitions.Commons.getSS(Commons.java:42)
+at stepDefinitions.SocialSites.verifySocialMediaSites(SocialSites.java:104)
+at ✽.All the social media sites should open correctly(file:///C:/Users/Shashwat%20Aryan/eclipse-workspace/MMT/src/test/resources/SocialSites.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-17T15:04:00 IST" name="tearDownClass" finished-at="2023-05-17T15:04:01 IST" duration-ms="551" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.runnerTest@5bda8e08]" started-at="2023-05-23T07:05:31 IST" name="tearDownClass" finished-at="2023-05-23T07:05:31 IST" duration-ms="677" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
