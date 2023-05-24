@@ -9,10 +9,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 import io.cucumber.java.en.*;
 import pageObjects.MmtSocialSites;
+import utilities.Hooks;
 import utilities.Reports;
 
 public class SocialSites   {
@@ -20,8 +19,7 @@ public class SocialSites   {
 
 	List<WebElement>social;
 	int counterSocialSites=0,errorExcpetion=0,screenShot;
-	MmtSocialSites socialSites=new MmtSocialSites(Commons.getDriver());
-	public ExtentTest test;
+	MmtSocialSites socialSites=new MmtSocialSites(Commons.driver);
 
 	@When ("User opens the MMT social media")
 	public void openMMTSocialMedia()
@@ -34,24 +32,24 @@ public class SocialSites   {
 
 				e1.printStackTrace();
 			}
-			JavascriptExecutor js = (JavascriptExecutor) Commons.getDriver();
+			JavascriptExecutor js = (JavascriptExecutor) Commons.driver;
 			//Scroll down till the bottom of the page
 			js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 		}
 		catch(Exception e)
 		{
-			errorExcpetion++;
+			Hooks.errorException++;
 		}
 		catch(AssertionError e1)
 		{
-			errorExcpetion++;
+			Hooks.errorException++;
 		}
 	}
 
 	@Then("All the social media sites should open correctly")
 	public void verifySocialMediaSites() throws IOException
 	{
-		test=Reports.extent.createTest("MMT Social Sites");
+		Hooks.test=Reports.extent.createTest("MMT Social Sites");
 		try {
 			for(WebElement iterateSocialSites:social)
 			{
@@ -63,7 +61,7 @@ public class SocialSites   {
 
 					e1.printStackTrace();
 				}
-				Actions action=new Actions(Commons.getDriver());
+				Actions action=new Actions(Commons.driver);
 				action.keyDown(Keys.CONTROL).moveToElement(iterateSocialSites).click().perform();
 				try {
 					Thread.sleep(3000);
@@ -71,42 +69,30 @@ public class SocialSites   {
 
 					e.printStackTrace();
 				}
-				Set<String>windowHandles=Commons.getDriver().getWindowHandles();
+				Set<String>windowHandles=Commons.driver.getWindowHandles();
 				Iterator<String>it=windowHandles.iterator();
 				String parentWindow=it.next();
 				String childWindow=it.next();
-				Commons.getDriver().switchTo().window(childWindow);
-				String url=Commons.getDriver().getCurrentUrl();
+				Commons.driver.switchTo().window(childWindow);
+				String url=Commons.driver.getCurrentUrl();
 				if(counterSocialSites==1)
 					Assert.assertEquals(url, "https://twitter.com/makemytrip/");
 				if(counterSocialSites==2)
 					Assert.assertEquals(url, "https://www.facebook.com/makemytrip/");
-				Commons.getDriver().close();
-				Commons.getDriver().switchTo().window(parentWindow);
+				Commons.driver.close();
+				Commons.driver.switchTo().window(parentWindow);
 				windowHandles.clear();
 			}
 		}
 		catch(Exception e)
 		{
-			errorExcpetion++;
+			Hooks.errorException++;
 		}
 		catch(AssertionError e1)
 		{
-			errorExcpetion++;
+			Hooks.errorException++;
 		}
 
-		finally {
-			if(errorExcpetion==0)
-				test.log(Status.PASS, "Open MMT Social Sites");
-			else
-			{
-				test.log(Status.FAIL,"MMT Social Sites not opened");
-				screenShot=Commons.getSS();
-				test.addScreenCaptureFromPath(".\\test-output\\Test"+screenShot+".png", "ScreenShot for failed test case");
-			}
-			if(errorExcpetion!=0)
-				Assert.fail();
-		}
 	}
 
 }

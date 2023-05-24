@@ -1,0 +1,6 @@
+git init
+git config --global user.name
+git add --all
+git commit -m"Tpye"
+git push <remote> <branch>
+git remote add origin <remote-url> (to connect local repository with remote repository)
