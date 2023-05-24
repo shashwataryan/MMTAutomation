@@ -4,40 +4,39 @@ import java.io.IOException;
 import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 import io.cucumber.java.en.*;
+import utilities.Hooks;
 import utilities.Reports;
 import pageObjects.UserFilters;
 
 
 public class ApplyFilter {
 
-	int errorExcpetion=0,screenShot;
-	public ExtentTest test;
-	UserFilters applyStarFilter=new UserFilters(Commons.getDriver());
-	
+	int screenShot;
+
+	UserFilters applyStarFilter=new UserFilters(Commons.driver);
+
 	@When("User applies a filter according to the star category")
-    public void applyFilter()
+	public void applyFilter()
 	{
 		try {
 			applyStarFilter.applyStaredFilter();
 		}
 		catch(Exception e)
 		{
-			errorExcpetion++;
+			Hooks.errorException++;
 		}
 		catch(AssertionError e1)
 		{
-			errorExcpetion++;
+			Hooks.errorException++;
 		}
 
 	}
-	
+
 	@Then ("The results should be filtered accordingly")
 	public void verifyStaredFilter() throws IOException
 	{
-		test=Reports.extent.createTest("Filter Result according to rating");
+		Hooks.test=Reports.extent.createTest("Filter Result according to rating");
 		try {
 			List<WebElement>filteredList=applyStarFilter.listAfterFiltering();
 			for(WebElement filteredListIterate:filteredList)
@@ -48,26 +47,12 @@ public class ApplyFilter {
 		}
 		catch(Exception e)
 		{
-			errorExcpetion++;
+			Hooks.errorException++;
 		}
 		catch(AssertionError e1)
 		{
-			errorExcpetion++;
+			Hooks.errorException++;
 		}
-		
-		finally {
-			
-			if(errorExcpetion==0)
-				test.log(Status.PASS, "Filtered according to rating");
-			else
-			{
-				test.log(Status.FAIL,"Filtering failed");
-				int screenShot=Commons.getSS();
-				test.addScreenCaptureFromPath(".\\test-output\\Test"+screenShot+".png", "ScreenShot for failed test case");
-			}
 
-			if(errorExcpetion!=0)
-				Assert.fail();
-		}
 	}
 }
