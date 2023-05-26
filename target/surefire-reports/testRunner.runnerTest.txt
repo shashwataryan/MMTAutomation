@@ -1,0 +1,40 @@
+-------------------------------------------------------------------------------
+Test set: testRunner.runnerTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 174.502 s <<< FAILURE! - in testRunner.runnerTest
+testRunner.runnerTest.runScenario["Validate the final amount paid for Hotel", "Validate Filter and Final Amount"](1)  Time elapsed: 39.149 s  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.fail(Assert.java:115)
+	at utilities.Hooks.afterScenario(Hooks.java:38)
+
+testRunner.runnerTest.runScenario["Validate the filter applied on Hotel", "Validate Filter and Final Amount"](2)  Time elapsed: 34.291 s  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.fail(Assert.java:115)
+	at utilities.Hooks.afterScenario(Hooks.java:38)
+
+testRunner.runnerTest.runScenario["Register to MMT to list your own hotel", "Register to MMT"](3)  Time elapsed: 18.784 s  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.fail(Assert.java:115)
+	at utilities.Hooks.afterScenario(Hooks.java:38)
+
+testRunner.runnerTest.runScenario["Login to MMT with valid credentials", "Login to MMT"](4)  Time elapsed: 23.332 s  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.fail(Assert.java:115)
+	at utilities.Hooks.afterScenario(Hooks.java:38)
+
+testRunner.runnerTest.runScenario["Login to MMT with valid credentials", "Login to MMT"](5)  Time elapsed: 24.507 s  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.fail(Assert.java:115)
+	at utilities.Hooks.afterScenario(Hooks.java:38)
+
+testRunner.runnerTest.runScenario["Open and check MMT twitter and facebook", "Verify MMT Social Media Sites"](6)  Time elapsed: 30.029 s  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.fail(Assert.java:115)
+	at utilities.Hooks.afterScenario(Hooks.java:38)
+
