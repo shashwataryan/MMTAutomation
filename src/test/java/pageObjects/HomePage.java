@@ -20,7 +20,7 @@ public class HomePage {
 
 	public WebDriver driver;
 	String monthYear;
-	int displayedNumber,date,roomsGuestsCounter=0;
+	int displayedNumber,roomsGuestsCounter=0;
 
 	public HomePage(WebDriver driver)
 	{
@@ -160,7 +160,7 @@ public class HomePage {
 	{
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(3));
 		LocalDate desireddate=LocalDate.parse(userDate);
-		date=desireddate.getDayOfMonth();
+		int date=desireddate.getDayOfMonth();
 		Month month=desireddate.getMonth();
 		String actualmonth=month.toString();
 		int year=desireddate.getYear();

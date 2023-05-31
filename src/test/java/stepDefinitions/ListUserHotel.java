@@ -10,28 +10,33 @@ import utilities.Reports;
 
 public class ListUserHotel{
 
-	HomePage clickHotelMenu=new HomePage(Commons.driver);
-	RegisterHotel listingUserHotel=new RegisterHotel(Commons.driver);
+	HomePage clickHotelMenu=new HomePage(Commons.getDriver());
+	RegisterHotel listingUserHotel=new RegisterHotel(Commons.getDriver());
 	String textAfterRegistration;
 	int screenShot;
-	
+	Integer error;
+	int interr;
 
 	@And("Clicks on the link to list hotel")
 	public void clickToListHotel()
 	{
 		try {
-			Hooks.test = Reports.extent.createTest("List Hotel");
+			
 			clickHotelMenu.selectHotelMenu();
 			clickHotelMenu.clickPropertyLink();
 			listingUserHotel.openListHotel();
 		}
 		catch(Exception e)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 		catch(AssertionError e1)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 
 
@@ -40,15 +45,19 @@ public class ListUserHotel{
 	public void enterUserDetails()
 	{
 		try {
-			textAfterRegistration=listingUserHotel.enterDetails("Shashwat", "testuseremail45@yopmail.com", "Test@123", "Test@123");
+			textAfterRegistration=listingUserHotel.enterDetails("Shashwat", "testuseremail51@yopmail.com", "Test@123", "Test@123");
 		}
 		catch(Exception e)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 		catch(AssertionError e1)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 
 	}
@@ -58,16 +67,21 @@ public class ListUserHotel{
 	{ 
 
 		try {
+			Hooks.test = Reports.extent.createTest("List Hotel");
 			Assert.assertEquals(textAfterRegistration,"We've sent you an email with an account activation link.");
 			
 		}
 		catch(AssertionError e)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 		catch(Exception e1)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 
 

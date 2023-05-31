@@ -10,9 +10,10 @@ import utilities.Reports;
 public class MMTSignIn {
 
 
-	SignIn accountSignIn=new SignIn(Commons.driver);
+	SignIn accountSignIn=new SignIn(Commons.getDriver());
 	int errorExcpetion=0,screenShot;
-	
+	Integer error;
+	int interr;
 
 	@When("^User Enters ([^\"]*) and ([^\"]*) and logs in$")
 	public void enterEmailpassword(String email,String password)
@@ -23,11 +24,15 @@ public class MMTSignIn {
 		}
 		catch(Exception e)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 		catch(AssertionError e1)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 	}
 
@@ -43,11 +48,15 @@ public class MMTSignIn {
 
 		catch(Exception e)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 		catch(AssertionError e1)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 
 		}
 	}

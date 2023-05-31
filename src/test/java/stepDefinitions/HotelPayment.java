@@ -11,7 +11,8 @@ import utilities.Reports;
 
 public class HotelPayment{
 
-
+	Integer error;
+	int interr;
 	int estimatedPrice,finalPrice;
 	int screenShot;
 
@@ -24,11 +25,15 @@ public class HotelPayment{
 		}
 		catch(Exception e)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 		catch(AssertionError e1)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 	}
 
@@ -44,11 +49,15 @@ public class HotelPayment{
 
 		catch(Exception e)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 		catch(AssertionError e1)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 
 	}

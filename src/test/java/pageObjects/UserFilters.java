@@ -31,6 +31,12 @@ public class UserFilters {
 	}
 	public List<WebElement> listAfterFiltering()
 	{
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(7));
 		
 		wait.until(ExpectedConditions.visibilityOfAllElements(listAfterFilter));

@@ -13,8 +13,10 @@ import pageObjects.UserFilters;
 public class ApplyFilter {
 
 	int screenShot;
-
-	UserFilters applyStarFilter=new UserFilters(Commons.driver);
+	Integer error;
+	int interr;
+	
+	UserFilters applyStarFilter=new UserFilters(Commons.getDriver());
 
 	@When("User applies a filter according to the star category")
 	public void applyFilter()
@@ -24,11 +26,15 @@ public class ApplyFilter {
 		}
 		catch(Exception e)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 		catch(AssertionError e1)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 
 	}
@@ -47,11 +53,15 @@ public class ApplyFilter {
 		}
 		catch(Exception e)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 		catch(AssertionError e1)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 
 	}

@@ -19,8 +19,10 @@ public class SocialSites   {
 
 	List<WebElement>social;
 	int counterSocialSites=0,errorExcpetion=0,screenShot;
-	MmtSocialSites socialSites=new MmtSocialSites(Commons.driver);
-
+	MmtSocialSites socialSites=new MmtSocialSites(Commons.getDriver());
+	Integer error;
+	int interr;
+	
 	@When ("User opens the MMT social media")
 	public void openMMTSocialMedia()
 	{
@@ -32,17 +34,21 @@ public class SocialSites   {
 
 				e1.printStackTrace();
 			}
-			JavascriptExecutor js = (JavascriptExecutor) Commons.driver;
+			JavascriptExecutor js = (JavascriptExecutor) Commons.getDriver();
 			//Scroll down till the bottom of the page
 			js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 		}
 		catch(Exception e)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 		catch(AssertionError e1)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 	}
 
@@ -61,7 +67,7 @@ public class SocialSites   {
 
 					e1.printStackTrace();
 				}
-				Actions action=new Actions(Commons.driver);
+				Actions action=new Actions(Commons.getDriver());
 				action.keyDown(Keys.CONTROL).moveToElement(iterateSocialSites).click().perform();
 				try {
 					Thread.sleep(3000);
@@ -69,28 +75,32 @@ public class SocialSites   {
 
 					e.printStackTrace();
 				}
-				Set<String>windowHandles=Commons.driver.getWindowHandles();
+				Set<String>windowHandles=Commons.getDriver().getWindowHandles();
 				Iterator<String>it=windowHandles.iterator();
 				String parentWindow=it.next();
 				String childWindow=it.next();
-				Commons.driver.switchTo().window(childWindow);
-				String url=Commons.driver.getCurrentUrl();
+				Commons.getDriver().switchTo().window(childWindow);
+				String url=Commons.getDriver().getCurrentUrl();
 				if(counterSocialSites==1)
 					Assert.assertEquals(url, "https://twitter.com/makemytrip/");
 				if(counterSocialSites==2)
 					Assert.assertEquals(url, "https://www.facebook.com/makemytrip/");
-				Commons.driver.close();
-				Commons.driver.switchTo().window(parentWindow);
+				Commons.getDriver().close();
+				Commons.getDriver().switchTo().window(parentWindow);
 				windowHandles.clear();
 			}
 		}
 		catch(Exception e)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 		catch(AssertionError e1)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 
 	}

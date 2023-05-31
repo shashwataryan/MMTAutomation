@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.HomePage;
 import pageObjects.PopUps;
 import utilities.Hooks;
@@ -16,15 +17,24 @@ import utilities.Hooks;
 
 public class Commons{
 
-	public static WebDriver driver;
+	public static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	public static HomePage searchForHotelList;
 	public PopUps dismissPopups;
-
+	Integer error;
+	int interr;
 	static int screenShotCount=1;
 
+	public static WebDriver getDriver()
+	{
+		return driver.get();
+	}
+	public static  void setDriver() {
+		WebDriverManager.chromedriver().setup();
+		driver.set(new ChromeDriver());
+	}
 	public static int getSS()
 	{
-		TakesScreenshot screenshot=(TakesScreenshot)driver;
+		TakesScreenshot screenshot=(TakesScreenshot)getDriver();
 		File sourceFile=screenshot.getScreenshotAs(OutputType.FILE);
 		File destFile=new File(".\\test-output\\Test"+screenShotCount+".png");
 		try {
@@ -39,21 +49,24 @@ public class Commons{
 	public void openMMTWebSite()
 	{
 		try {
-			System.setProperty("webdriver.chrome.driver", ".\\chromedriver.exe");
-			driver=new ChromeDriver();
-			driver.get("https://www.makemytrip.com/");
-			driver.manage().window().maximize();
-			searchForHotelList=new HomePage(driver);
-			dismissPopups=new PopUps(driver);
+			setDriver();
+			getDriver().get("https://www.makemytrip.com/");
+			getDriver().manage().window().maximize();
+			searchForHotelList=new HomePage(getDriver());
+			dismissPopups=new PopUps(getDriver());
 			dismissPopups.closePopup();
 		}
 		catch(Exception e)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 		catch(AssertionError e1)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 	}
 
@@ -66,11 +79,15 @@ public class Commons{
 		}
 		catch(Exception e)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 		catch(AssertionError e1)
 		{
-			Hooks.errorException++;
+			error=Hooks.errorException.get();
+			interr=error+1;
+			Hooks.errorException.set(interr);
 		}
 
 	}
